@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: pink; 
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .picture img {
+      width: 200px;
+      height: 200px;
+    }
+    #buttons button {
+      background-color: white;
+      padding: 10px;
+      border-radius: 0;
+      border: none;
+      margin: 10px 8px;
+      cursor: pointer;
+      box-shadow: 6px 9px 30px -6px rgba(0, 0, 0, 0.67);
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="picture" id="picture">
+      <img src="https://www.icegif.com/wp-content/uploads/2023/10/icegif-961.gif" alt="" />
+    </div>
+    <div id="title">
+      <h1>Do you Love me ?</h1>
+    </div>
+    <div id="para">
+      <p>Shabbir tera hi hai !</p>
+    </div>
+    <div id="buttons">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to handle the click event for 'No' button
+    function handleNoButtonClick() {
+      const picture = document.getElementById("picture");
+      const title = document.getElementById("title");
+      const para = document.getElementById("para");
+
+      // If elements exist
+      if (picture && title && para) {
+        picture.id = "picture1";
+        title.id = "title1";
+        para.id = "para1";
+        this.id = "btnNo1"; // Change the current button's ID
+
+        picture.innerHTML = `<img src="https://media1.tenor.com/m/aKFaZBrZFYcAAAAC/excited-spin.gif"/>`;
+        title.innerHTML = `<h1> Soch le acha se ! </h1>`;
+        para.innerHTML = `<p> itni jldi nhi mat bol ! </p>`;
+
+        // Add click event listener for the updated button
+        this.removeEventListener("click", handleNoButtonClick); // Remove previous event listener
+        this.addEventListener("click", handleNoButton1Click);
+      }
+    }
+
+    // Function to handle the click event for 'No' button (first update)
+    function handleNoButton1Click() {
+      const picture1 = document.getElementById("picture1");
+      const title1 = document.getElementById("title1");
+      const para1 = document.getElementById("para1");
+
+      // If elements exist
+      if (picture1 && title1 && para1) {
+        picture1.innerHTML = `<img src="https://i.pinimg.com/originals/d7/f5/87/d7f587da442a54025daf47091fe26ba0.gif"/>`;
+        title1.innerHTML = `<h1> Aik aur bar soch le ! </h1>`;
+        para1.innerHTML = `<p> kyun aesa kar rhi hai ! </p>`;
+
+        picture1.id = "picture2";
+        title1.id = "title2";
+        para1.id = "para2";
+        this.id = "btnNo2"; // Change the current button's ID
+
+        // Add click event listener for the updated button
+        this.removeEventListener("click", handleNoButton1Click); // Remove previous event listener
+        this.addEventListener("click", handleNoButton2Click);
+      }
+    }
+
+    // Function to handle the click event for 'No' button (second update)
+    function handleNoButton2Click() {
+      const picture2 = document.getElementById("picture2");
+      const title2 = document.getElementById("title2");
+      const para2 = document.getElementById("para2");
+
+      // If elements exist
+      if (picture2 && title2 && para2) {
+        picture2.innerHTML = `<img src="https://i.pinimg.com/originals/d7/85/c8/d785c8adfc4ea36875c16a3b6e3c0309.gif"/>`;
+        title2.innerHTML = `<h1> Man bh ja ! Ab nkhre nw kar... </h1>`;
+        para2.innerHTML = `<p> bht glt baat hai ! </p>`;
+
+        picture2.id = "picture3";
+        title2.id = "title3";
+        para2.id = "para3";
+        this.id = "btnNo3"; // Change the current button's ID
+
+        // Add hover event listener for the updated button
+        this.removeEventListener("click", handleNoButton2Click); // Remove click event listener
+        this.addEventListener("mouseover", handleNoButtonHover);
+      }
+    }
+
+    // Function to handle the hover event for 'No' button (third update)
+    function handleNoButtonHover() {
+      const buttons = document.getElementById("buttons");
+
+      // If elements exist
+      if (buttons) {
+        buttons.style.position = "absolute";
+        buttons.style.top = `${Math.random() * 80}%`; // Randomize the top position
+        buttons.style.left = `${Math.random() * 80}%`; // Randomize the left position
+      }
+    }
+
+    // Initialize the click event for 'No' button
+    const btnNo = document.getElementById("no");
+    if (btnNo) {
+      btnNo.addEventListener("click", handleNoButtonClick);
+    }
+  </script>
+</body>
+</html>
